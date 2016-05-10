@@ -11,3 +11,4 @@ for i in range(T):
 
 print(max(step1[T+2],step2[T+2]))
     
+# 초등부 dp 문제
