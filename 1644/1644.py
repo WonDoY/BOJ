@@ -13,17 +13,19 @@ for i in range(2,T+1):
 ##            print(i,prime[x])
             prime_true=False
             break
+        if(int(T/2)<prime[x]):break
     if(prime_true):
         prime.append(i)
 if(prime[len(prime)-1]==T):res=1
 else:res=0
-for i in range(len(prime)):
+for i in range(len(prime)-1,-1,-1):
     s=prime[i]
-    for j in range(i+1,len(prime)):
+    
+    for j in range(i-1,-1,-1):
         s+=prime[j]
         if(s==T):res+=1;break
         elif(s>T):break
-    
+    if(s<T):break
 print(res)
 end=time.time()-start
 ##print(end)
