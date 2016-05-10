@@ -58,12 +58,6 @@ def BFS(size):
                 safe_true = False
         if(res < MIN) : res = MIN
         if (MIN == 0): break
-
-
-        
-                            
-                            
-                    
                 
 T = int(input())
 area = []
@@ -74,9 +68,6 @@ for i in range(T+2):
         if (i==0 or i==T+1 or j==0 or j==T+1): lst.append(0)
         else: lst.append(int(string[j-1]))
     area.append(lst)
-
-
-
 BFS(T)
 print(res)
     
