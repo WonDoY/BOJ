@@ -1,24 +1,26 @@
 #1212
 T=(input())
-res=''
+binary=int(T[0])
+l=False
+if(binary>=4):binary-=4;print('1',end='');l=True
+if(binary>=2):binary-=2;print('1',end='')
+elif(l): print('0',end='')
+if(binary>=1):binary-=1;print('1',end='')
+else: print('0',end='')
 
-for x in range(len(T)):
+for x in range(1,len(T)):
     temp=''
     binary=int(T[x])
-    print('binary',binary)
-    if(binary>=4):binary-=4;temp=temp+'1'
-    else: temp=temp+'0'
-    if(binary>=2):binary-=2;temp=temp+'1'
-    else: temp=temp+'0'
-    if(binary>=1):binary-=1;temp=temp+'1'
-    else: temp=temp+'0'    
-    res=res+temp    
-    print('temp',temp,'T',T)
+    if(binary>=4):binary-=4;print('1',end='')
+    else: print('0',end='')
+    if(binary>=2):binary-=2;print('1',end='')
+    else: print('0',end='')
+    if(binary>=1):binary-=1;print('1',end='')
+    else: print('0',end='')
     
-if(res.find('0')<1):
-    res=res[res.find('0')+1:]
-    if(res.find('0')<1):
-        res=res[res.find('0')+1:]
-print(res)
+    
+    
+
+
 
 #출력초과
