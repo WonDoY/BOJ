@@ -11,13 +11,15 @@ for i in range(testcase):
         nodetime.append(int(string[x]))
         noderesult.append(0);
     noderesult[1]=nodetime[1]
+# compute
     for x in range(rule):
         string=input().split()
-        noderesult[int(string[1])]=max(noderesult[int(string[0])]+nodetime[int(string[1])],noderesult[int(string[1])])
+        noderesult[int(string[1])]=max(noderesult[int(string[0])]
+                    +nodetime[int(string[1])],noderesult[int(string[1])])
         
-##        
-##        print(nodetime)
-##        print(noderesult)
+        
+        print(nodetime)
+        print(noderesult)
         
     
         
@@ -30,11 +32,6 @@ for i in range(testcase):
     
 
 
-    # compute
-    #
-    #
-    #
-    #
-    #
+
     
     
