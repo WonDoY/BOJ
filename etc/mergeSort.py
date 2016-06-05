@@ -13,10 +13,9 @@ def mergeSort(lst):
     #
     if len(lst) <= 1:
         return lst
-    size = len(lst) // 2
+    size = int(len(lst)/2)
     front = mergeSort(lst[:size])
     rear = mergeSort(lst[size:])
-
     
     return merge(front, rear)
 #d n c
@@ -30,9 +29,8 @@ def merge(front, rear):
     
 
 
-lst=map(int,input().split())
-
+lst=[int(x)for x in input().split()]
 print("merge Sort")
-print(lst)
+print("Before",lst)
 lst=mergeSort(lst)
-print(lst)
+print("After",lst)
