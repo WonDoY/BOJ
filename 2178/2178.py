@@ -165,32 +165,125 @@ class Stack:
 ##DFS(1,1,m,n,1)
 ##print(mmm)
 
+
+##def DFS( srow, scol, frow, fcol ,d):
+##    global res
+##    if( srow == frow and scol == fcol) :
+##        if(d < res) : res = d
+##        return
+##
+####    for i in range(frow+2):
+####        for j in range(fcol+2):
+####            print(maze[i][j],end="")
+####        print()
+####    print(res,"\n\n\n")
+##        
+##
+##    maze[srow][scol] = 0
+##    if(srow > 0 and maze[srow-1][scol] != 0) :
+##        DFS(srow-1, scol, frow, fcol, d+1)
+##    if(srow < frow+1 and maze[srow+1][scol] != 0):
+##        DFS(srow+1, scol, frow, fcol, d+1)
+##    if(scol > 0 and maze[srow][scol-1] != 0) :
+##        DFS(srow,scol-1, frow, fcol, d+1)
+##    if(scol < fcol+1 and maze[srow][scol+1] != 0) :
+##        DFS(srow,scol+1, frow, fcol, d+1)
+##    maze[srow][scol] = 1
+
+
+##def DFS( row, col, finish_row, finish_col , cnt):
+##    global res
+##    if( row < 1 or col < 1 or row >= finish_row + 1 or col >= finish_col + 1):
+##        return 
+##
+##    if( row == finish_row and col == finish_col ):
+##        if( cnt < res ): res = cnt
+##        return
+####    for i in range(finish_row+2):
+####        for j in range(finish_col+2):
+####            print(maze[i][j],end="")
+####        print()
+####    for i in range(finish_row+2):
+####        for j in range(finish_col+2):
+####            print(visit[i][j],end="")
+####        print()
+##    for i in range(4):
+##        
+##        Row = row + dirt[i][0]
+##        Col = col + dirt[i][1]
+####        print('2',visit[Row][Col] == 0, maze[Row][Col] == 1, visit[Row][Col] == 0 and maze[Row][Col] == 1)
+##        if(visit[Row][Col] == 0 and maze[Row][Col] == 1):
+####            print('3')
+##            visit[Row][Col] = 1
+##            DFS(Row,Col,finish_row,finish_col, cnt+1)
+##            visit[Row][Col] = 0
+
+
+
+##dirt = ((1,0),(0,1),(-1,0),(0,-1))
+##maze = []
+##visit = []
+##
+##lst = input().split()
+##frow = int(lst[0])
+##fcol = int(lst[1])
+##
+##
+##
+##for i in range(frow+2):
+##    lst = [];    vlst = []
+##    if(i!=0 and i!=frow+1): string = input()
+##    for j in range(fcol+2):
+##        vlst.append(0)
+##        if (i==0 or i==frow+1 or j==0 or j==fcol+1): lst.append(0)
+##        else: lst.append(int(string[j-1]))
+##    maze.append(lst)
+##    visit.append(vlst)
+##
+##
+##visit[1][1] = 1
+## 
+##position = [(1,1)]
+## 
+##while (position):
+##    row, col = position.pop(0)
+##    length = visit[row][col] + 1
+## 
+##    for row, col in ((row-1, col), (row+1, col), (row, col-1), (row,col+1)):
+##        if (1 <= row <= frow and 1<= col <= fcol):
+##            if (maze[row][col]):
+##                visit[row][col] = length
+##                maze[row][col] = 0
+##                position.append((row, col))
+## 
+##print (visit[row][col])
+
+
+
+
 maze = []
 def DFS( srow, scol, frow, fcol ,d):
     global res
     if( srow == frow and scol == fcol) :
         if(d < res) : res = d
-        return
-
 ##    for i in range(frow+2):
 ##        for j in range(fcol+2):
 ##            print(maze[i][j],end="")
 ##        print()
-##    print(res,"\n\n\n")
-        
+##    print(res,"\n\n\n")         
 
     maze[srow][scol] = 0
     if(srow > 0 and maze[srow-1][scol] != 0) :
         DFS(srow-1, scol, frow, fcol, d+1)
-    if(srow < frow+1 and maze[srow+1][scol] != 0):
+    if(maze[srow+1][scol] != 0):
         DFS(srow+1, scol, frow, fcol, d+1)
     if(scol > 0 and maze[srow][scol-1] != 0) :
         DFS(srow,scol-1, frow, fcol, d+1)
-    if(scol < fcol+1 and maze[srow][scol+1] != 0) :
+    if(maze[srow][scol+1] != 0) :
         DFS(srow,scol+1, frow, fcol, d+1)
     maze[srow][scol] = 1
-        
-
+         
+ 
 lst = input().split()
 row = int(lst[0])
 col = int(lst[1])
@@ -202,12 +295,10 @@ for i in range(row+2):
         if (i==0 or i==row+1 or j==0 or j==col+1): lst.append(0)
         else: lst.append(string[j-1])
     maze.append(lst)
-
+ 
 DFS(1,1,row,col,1)
 print(res)
 
-        
-        
 
 
 
