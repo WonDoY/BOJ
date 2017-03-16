@@ -1,0 +1,3 @@
+SCC(Strongly Connected Component)
++Kosaraju's Algorithm
+-(x)Tarjan's Algorithm
